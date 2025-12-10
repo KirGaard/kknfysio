@@ -20,14 +20,14 @@ if (!isConfigured) {
   }
 }
 
+// Determine if we should use placeholder values
+const isProduction = process.env.NODE_ENV === 'production';
+const shouldUsePlaceholders = !isProduction && !isConfigured;
+
 // For development, use placeholder values only if explicitly in development mode
 // In production, require actual credentials
-const url = supabaseUrl || (process.env.NODE_ENV === 'production' 
-  ? '' 
-  : 'https://placeholder.supabase.co');
-const key = supabaseAnonKey || (process.env.NODE_ENV === 'production' 
-  ? '' 
-  : 'placeholder-anon-key');
+const url = supabaseUrl || (shouldUsePlaceholders ? 'https://placeholder.supabase.co' : '');
+const key = supabaseAnonKey || (shouldUsePlaceholders ? 'placeholder-anon-key' : '');
 
 if (!url || !key) {
   throw new Error('Supabase credentials are missing. Please configure environment variables.');
