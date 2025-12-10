@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
 import styles from './NavBar.module.css';
 
 const NavBar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+  const { user, isAdmin, signOut } = useAuth();
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
@@ -22,6 +25,12 @@ const NavBar: React.FC = () => {
         }
       }
     }
+  };
+
+  const handleSignOut = async () => {
+    await signOut();
+    closeMenu();
+    navigate('/');
   };
 
   const isActive = (path: string) => location.pathname === path;
@@ -71,6 +80,33 @@ const NavBar: React.FC = () => {
           >
             Priser
           </Link>
+          
+          {isAdmin && (
+            <Link 
+              to="/admin" 
+              className={`${styles.navLink} ${styles.adminLink} ${location.pathname.startsWith('/admin') ? styles.active : ''}`}
+              onClick={closeMenu}
+            >
+              Admin
+            </Link>
+          )}
+          
+          {user ? (
+            <button 
+              onClick={handleSignOut}
+              className={styles.authButton}
+            >
+              Log ud
+            </button>
+          ) : (
+            <Link 
+              to="/login" 
+              className={`${styles.navLink} ${styles.loginLink} ${isActive('/login') ? styles.active : ''}`}
+              onClick={closeMenu}
+            >
+              Log ind
+            </Link>
+          )}
         </div>
       </div>
     </nav>

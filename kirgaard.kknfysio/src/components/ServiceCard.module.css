@@ -1,0 +1,86 @@
+.card {
+  background: var(--color-white);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(91, 186, 111, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all var(--transition-medium);
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(91, 186, 111, 0.15);
+}
+
+.iconContainer {
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(135deg, var(--color-mint-medium) 0%, var(--color-mint) 100%);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: var(--color-turf-green);
+}
+
+.defaultIcon {
+  font-size: 1.75rem;
+}
+
+.title {
+  color: var(--color-deep-forest);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+}
+
+.description {
+  color: var(--color-warm-gray);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0 0 1.5rem 0;
+  flex: 1;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.75rem;
+  background: var(--color-deep-forest);
+  color: var(--color-white);
+  border: none;
+  border-radius: 9999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition-medium);
+  margin-top: auto;
+}
+
+.button:hover {
+  background: var(--color-turf-green);
+  transform: scale(1.02);
+  color: var(--color-white);
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 2rem 1.5rem;
+  }
+
+  .iconContainer {
+    width: 64px;
+    height: 64px;
+    font-size: 1.75rem;
+  }
+}

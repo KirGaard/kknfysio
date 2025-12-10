@@ -1,0 +1,270 @@
+.page {
+  min-height: calc(100vh - 200px);
+  padding: 2rem;
+  background: var(--color-mint-light);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.backLink {
+  display: inline-block;
+  color: var(--color-turf-green);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+  transition: color var(--transition-medium);
+}
+
+.backLink:hover {
+  color: var(--color-forest-green);
+}
+
+.title {
+  color: var(--color-deep-forest);
+  font-size: 2rem;
+  margin: 0;
+}
+
+.loading {
+  text-align: center;
+  color: var(--color-warm-gray);
+  padding: 4rem;
+}
+
+.filters {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filterGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.filterGroup label {
+  font-weight: 600;
+  color: var(--color-dark-gray);
+  font-size: 0.9rem;
+}
+
+.filterSelect {
+  padding: 0.625rem 1rem;
+  border: 2px solid var(--color-mint-medium);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  background: var(--color-white);
+  min-width: 150px;
+  cursor: pointer;
+  transition: all var(--transition-medium);
+}
+
+.filterSelect:focus {
+  outline: none;
+  border-color: var(--color-turf-green);
+  box-shadow: 0 0 0 3px rgba(19, 117, 71, 0.1);
+}
+
+.noData {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--color-white);
+  border-radius: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.noData p {
+  color: var(--color-warm-gray);
+  margin: 0;
+}
+
+.tableWrapper {
+  background: var(--color-white);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  overflow-x: auto;
+  border: 1px solid rgba(91, 186, 111, 0.1);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.table th,
+.table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-mint-medium);
+}
+
+.table th {
+  font-weight: 600;
+  color: var(--color-deep-forest);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.table td {
+  color: var(--color-dark-gray);
+}
+
+.table tbody tr:hover {
+  background: var(--color-mint-light);
+}
+
+.nameCell {
+  font-weight: 600;
+  color: var(--color-deep-forest);
+}
+
+.statusSelect {
+  padding: 0.375rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-medium);
+}
+
+.statusSelect.pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.statusSelect.confirmed {
+  background: var(--color-mint-medium);
+  color: var(--color-deep-forest);
+}
+
+.statusSelect.cancelled {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.deleteButton {
+  padding: 0.5rem 1rem;
+  background: #fee2e2;
+  color: #991b1b;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-medium);
+}
+
+.deleteButton:hover {
+  background: #fecaca;
+}
+
+.summary {
+  margin-top: 2rem;
+  background: var(--color-white);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(91, 186, 111, 0.1);
+}
+
+.summary h3 {
+  color: var(--color-deep-forest);
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.attendeeList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.attendeeList li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--color-mint-medium);
+  flex-wrap: wrap;
+}
+
+.attendeeName {
+  font-weight: 600;
+  color: var(--color-deep-forest);
+  min-width: 150px;
+}
+
+.attendeeEmail {
+  color: var(--color-warm-gray);
+  flex: 1;
+}
+
+.attendeeStatus {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.attendeeStatus.pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.attendeeStatus.confirmed {
+  background: var(--color-mint-medium);
+  color: var(--color-deep-forest);
+}
+
+.totalAttendees {
+  margin-top: 1.5rem;
+  font-weight: 600;
+  color: var(--color-turf-green);
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 1rem;
+  }
+
+  .filters {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .filterGroup {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .filterSelect {
+    width: 100%;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .attendeeList li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

@@ -74,6 +74,45 @@
   color: var(--color-turf-green);
 }
 
+.loginLink {
+  background: var(--color-mint-medium);
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  color: var(--color-turf-green);
+  font-weight: 600;
+}
+
+.loginLink:hover {
+  background: var(--color-sage);
+}
+
+.loginLink::after {
+  display: none;
+}
+
+.adminLink {
+  color: var(--color-turf-green);
+}
+
+.authButton {
+  background: none;
+  border: 2px solid var(--color-mint-medium);
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  color: var(--color-warm-gray);
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all var(--transition-medium);
+}
+
+.authButton:hover {
+  border-color: var(--color-sage);
+  color: var(--color-dark-gray);
+  background: var(--color-mint-light);
+}
+
 .menuToggle {
   display: none;
   background: linear-gradient(135deg, var(--color-turf-green) 0%, var(--color-deep-forest) 100%);
@@ -132,5 +171,16 @@
 
   .navLink::after {
     display: none;
+  }
+
+  .loginLink {
+    margin: 0.5rem 1rem;
+    width: auto;
+    text-align: center;
+  }
+
+  .authButton {
+    margin: 0.5rem 1.5rem;
+    width: calc(100% - 3rem);
   }
 }
