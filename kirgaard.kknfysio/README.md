@@ -1,4 +1,43 @@
-# Getting Started with Create React App
+# KKN Fysio - Booking System
+
+A React-based booking system for KKN Fysio classes and workshops, built with TypeScript and Supabase.
+
+## Setup
+
+### Prerequisites
+
+- Node.js 16+ 
+- A Supabase account and project
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Set up environment variables:
+   - Copy `.env.example` to `.env.local`
+   - Fill in your Supabase credentials from your Supabase project settings
+   - Get credentials from: https://app.supabase.com → Your Project → Settings → API
+
+4. Set up the database:
+   - Follow the instructions in `supabase/README.md` to run database migrations
+   - Or manually run the SQL files in `supabase/migrations/` in your Supabase SQL editor
+
+### Environment Variables
+
+Required environment variables in `.env.local`:
+
+```env
+REACT_APP_SUPABASE_URL=https://your-project.supabase.co
+REACT_APP_SUPABASE_ANON_KEY=your-anon-key-here
+```
+
+Note: The app also supports `REACT_APP_SUPABASE_PUBLISHABLE_DEFAULT_KEY` as an alternative to `REACT_APP_SUPABASE_ANON_KEY`.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
