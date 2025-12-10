@@ -151,9 +151,24 @@ CREATE POLICY "Admins can delete all bookings"
 CREATE OR REPLACE FUNCTION public.handle_new_user()
 RETURNS TRIGGER AS $$
 BEGIN
+  -- Validate that we have a valid user ID and email
+  IF NEW.id IS NULL OR NEW.email IS NULL THEN
+    RAISE EXCEPTION 'User ID and email are required';
+  END IF;
+  
+  -- Insert the new profile
   INSERT INTO public.profiles (id, email, full_name)
   VALUES (NEW.id, NEW.email, NEW.raw_user_meta_data->>'full_name');
+  
   RETURN NEW;
+EXCEPTION
+  WHEN unique_violation THEN
+    -- Profile already exists, just return NEW
+    RETURN NEW;
+  WHEN OTHERS THEN
+    -- Log the error but don't block user creation
+    RAISE WARNING 'Failed to create profile for user %: %', NEW.id, SQLERRM;
+    RETURN NEW;
 END;
 $$ LANGUAGE plpgsql SECURITY DEFINER;
 

@@ -1,19 +1,20 @@
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import type { Database } from '../types/database.types';
 
-// Use placeholder URLs for development/testing when env vars are not set
-const supabaseUrl = process.env.REACT_APP_SUPABASE_URL || 'https://placeholder.supabase.co';
-const supabaseAnonKey = process.env.REACT_APP_SUPABASE_ANON_KEY || 'placeholder-anon-key';
+const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
+const supabaseAnonKey = process.env.REACT_APP_SUPABASE_ANON_KEY;
 
-const isConfigured = 
-  process.env.REACT_APP_SUPABASE_URL && 
-  process.env.REACT_APP_SUPABASE_ANON_KEY;
+const isConfigured = Boolean(supabaseUrl && supabaseAnonKey);
 
 if (!isConfigured) {
   console.warn('Supabase credentials not configured. Some features may not work.');
 }
 
-// Create client without strict typing for development flexibility
-// In production with actual Supabase, the types will be auto-generated
-export const supabase: SupabaseClient<Database> = createClient(supabaseUrl, supabaseAnonKey);
+// Use placeholder values only for development/testing when env vars are not set
+// In production, these should always be properly configured
+const url = supabaseUrl || 'https://placeholder.supabase.co';
+const key = supabaseAnonKey || 'placeholder-anon-key';
+
+// Create client - will fail gracefully if credentials are invalid
+export const supabase: SupabaseClient<Database> = createClient(url, key);
 export const isSupabaseConfigured = isConfigured;
