@@ -1,3 +1,32 @@
+:root {
+  /* Earth tones */
+  --color-sand: #F5F1E8;
+  --color-cream: #FFF8F0;
+  --color-beige: #E8DCC8;
+  --color-taupe: #C4B5A0;
+  --color-warm-gray: #8B8376;
+  --color-dark-brown: #5C4D3C;
+  
+  /* Deep blue/green accents */
+  --color-deep-blue: #1A4D5C;
+  --color-forest-green: #2C5F4F;
+  --color-sage: #7A9B8E;
+  
+  /* Neutral */
+  --color-white: #FFFFFF;
+  --color-black: #2A2A2A;
+  --color-gray-light: #F8F8F8;
+  
+  /* Spacing */
+  --max-width: 1200px;
+  --section-padding: 4rem 2rem;
+  --section-padding-mobile: 3rem 1.5rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +34,126 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: var(--color-black);
+  background-color: var(--color-cream);
+  line-height: 1.6;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  line-height: 1.2;
+  color: var(--color-dark-brown);
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+p {
+  margin-top: 0;
+}
+
+a {
+  color: var(--color-deep-blue);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-forest-green);
+}
+
+a:focus {
+  outline: 2px solid var(--color-deep-blue);
+  outline-offset: 2px;
+}
+
+button:focus {
+  outline: 2px solid var(--color-deep-blue);
+  outline-offset: 2px;
+}
+
+/* Animation utilities */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
 }

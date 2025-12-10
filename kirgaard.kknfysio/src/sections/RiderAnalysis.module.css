@@ -1,0 +1,71 @@
+.riderAnalysis {
+  background-color: var(--color-white);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.content {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.title {
+  color: var(--color-deep-blue);
+  margin-bottom: 1rem;
+}
+
+.description {
+  color: var(--color-warm-gray);
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.features li {
+  padding: 0.75rem 0;
+  padding-left: 2rem;
+  position: relative;
+  color: var(--color-dark-brown);
+}
+
+.features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-forest-green);
+  font-weight: 700;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-deep-blue);
+  margin-bottom: 1.5rem;
+}
+
+.imagePlaceholder {
+  background-color: var(--color-taupe);
+  border-radius: 8px;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  animation: slideInRight 0.6s ease-out;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

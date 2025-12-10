@@ -1,0 +1,24 @@
+.footer {
+  background-color: var(--color-dark-brown);
+  color: var(--color-sand);
+  padding: 2rem;
+  text-align: center;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.footer p {
+  margin: 0.5rem 0;
+}
+
+.footer a {
+  color: var(--color-sand);
+  margin: 0 0.5rem;
+}
+
+.footer a:hover {
+  color: var(--color-white);
+}

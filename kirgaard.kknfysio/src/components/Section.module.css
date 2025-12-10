@@ -1,0 +1,19 @@
+.section {
+  padding: var(--section-padding);
+  animation: fadeIn 0.6s ease-out;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.centered {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--section-padding-mobile);
+  }
+}

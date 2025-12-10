@@ -1,0 +1,111 @@
+.contact {
+  background-color: var(--color-sand);
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--color-deep-blue);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.info h3 {
+  color: var(--color-deep-blue);
+  margin-bottom: 1rem;
+}
+
+.infoItem {
+  margin-bottom: 1.5rem;
+}
+
+.infoItem h4 {
+  color: var(--color-forest-green);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.infoItem p {
+  color: var(--color-warm-gray);
+  margin: 0;
+  white-space: pre-line;
+}
+
+.infoItem a {
+  color: var(--color-deep-blue);
+  text-decoration: none;
+}
+
+.infoItem a:hover {
+  text-decoration: underline;
+}
+
+.note {
+  font-size: 0.875rem;
+  color: var(--color-warm-gray);
+  font-style: italic;
+}
+
+.form {
+  animation: slideUp 0.6s ease-out;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--color-dark-brown);
+  font-weight: 500;
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 0.875rem;
+  border: 1px solid var(--color-taupe);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: var(--color-deep-blue);
+}
+
+.formGroup textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.ctas {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .ctas {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,50 @@
+.classes {
+  background-color: var(--color-sand);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--color-deep-blue);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.classTitle {
+  margin-bottom: 1rem;
+}
+
+.schedule,
+.location {
+  color: var(--color-warm-gray);
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.schedule::before {
+  content: '🕐 ';
+}
+
+.location::before {
+  content: '📍 ';
+}
+
+.description {
+  margin-bottom: 1rem;
+}
+
+.note {
+  color: var(--color-deep-blue);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
