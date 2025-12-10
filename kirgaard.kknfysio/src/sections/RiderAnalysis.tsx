@@ -18,7 +18,6 @@ const RiderAnalysis: React.FC = () => {
               <li key={index}>{feature}</li>
             ))}
           </ul>
-          <p className={styles.price}>{riderAnalysis.price}</p>
           <Button variant="primary" href={`mailto:${content.contact.email}`}>
             Kontakt for booking
           </Button>

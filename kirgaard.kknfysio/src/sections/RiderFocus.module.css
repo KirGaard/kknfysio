@@ -1,26 +1,79 @@
 .riderFocus {
-  background-color: var(--color-sand);
+  background: linear-gradient(180deg, var(--color-mint-light) 0%, var(--color-mint) 100%);
+  position: relative;
+}
+
+.riderFocus::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(91, 186, 111, 0.08) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .title {
   text-align: center;
+  margin-bottom: 1rem;
+  color: var(--color-deep-forest);
+  font-size: 2.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+.subtitle {
+  text-align: center;
   margin-bottom: 3rem;
-  color: var(--color-deep-blue);
+  color: var(--color-warm-gray);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 1;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 .area {
   text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  transition: all var(--transition-medium);
+  border: 1px solid rgba(91, 186, 111, 0.1);
+}
+
+.area:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.areaIcon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--color-emerald) 0%, var(--color-turf-green) 100%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 1.5rem;
 }
 
 .areaTitle {
   margin-bottom: 1rem;
-  color: var(--color-forest-green);
+  color: var(--color-turf-green);
+  font-size: 1.25rem;
 }
 
 .areaDescription {
@@ -29,6 +82,10 @@
 }
 
 @media (max-width: 768px) {
+  .title {
+    font-size: 1.875rem;
+  }
+  
   .grid {
     grid-template-columns: 1fr;
   }

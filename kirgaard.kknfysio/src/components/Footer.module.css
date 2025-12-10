@@ -1,7 +1,7 @@
 .footer {
-  background-color: var(--color-dark-brown);
-  color: var(--color-sand);
-  padding: 2rem;
+  background: linear-gradient(135deg, var(--color-deep-forest) 0%, var(--color-turf-green) 100%);
+  color: var(--color-mint-light);
+  padding: 3rem 2rem;
   text-align: center;
 }
 
@@ -11,14 +11,18 @@
 }
 
 .footer p {
-  margin: 0.5rem 0;
+  margin: 0.75rem 0;
+  opacity: 0.9;
 }
 
 .footer a {
-  color: var(--color-sand);
-  margin: 0 0.5rem;
+  color: var(--color-mint-light);
+  margin: 0 0.75rem;
+  opacity: 0.9;
+  transition: all var(--transition-fast);
 }
 
 .footer a:hover {
   color: var(--color-white);
+  opacity: 1;
 }

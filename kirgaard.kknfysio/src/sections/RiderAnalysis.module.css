@@ -1,11 +1,11 @@
 .riderAnalysis {
-  background-color: var(--color-white);
+  background: linear-gradient(180deg, var(--color-white) 0%, var(--color-mint-light) 100%);
 }
 
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  gap: 4rem;
   align-items: center;
 }
 
@@ -14,14 +14,16 @@
 }
 
 .title {
-  color: var(--color-deep-blue);
-  margin-bottom: 1rem;
+  color: var(--color-deep-forest);
+  margin-bottom: 1.25rem;
+  font-size: 2.25rem;
 }
 
 .description {
   color: var(--color-warm-gray);
   margin-bottom: 2rem;
-  line-height: 1.8;
+  line-height: 1.9;
+  font-size: 1.0625rem;
 }
 
 .features {
@@ -31,41 +33,67 @@
 }
 
 .features li {
-  padding: 0.75rem 0;
-  padding-left: 2rem;
+  padding: 0.875rem 0;
+  padding-left: 2.5rem;
   position: relative;
-  color: var(--color-dark-brown);
+  color: var(--color-dark-gray);
+  font-size: 1rem;
+  transition: all var(--transition-fast);
 }
 
 .features li::before {
   content: '✓';
   position: absolute;
   left: 0;
-  color: var(--color-forest-green);
+  top: 0.875rem;
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, var(--color-emerald) 0%, var(--color-turf-green) 100%);
+  color: var(--color-white);
   font-weight: 700;
+  font-size: 0.75rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.price {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--color-deep-blue);
-  margin-bottom: 1.5rem;
+.features li:hover {
+  transform: translateX(4px);
 }
 
 .imagePlaceholder {
-  background-color: var(--color-taupe);
-  border-radius: 8px;
+  background: linear-gradient(135deg, var(--color-emerald) 0%, var(--color-turf-green) 100%);
+  border-radius: 24px;
   aspect-ratio: 4 / 3;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--color-white);
   animation: slideInRight 0.6s ease-out;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.imagePlaceholder::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  animation: shimmer 3s infinite;
 }
 
 @media (max-width: 768px) {
   .container {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 2.5rem;
+  }
+  
+  .title {
+    font-size: 1.875rem;
   }
 }

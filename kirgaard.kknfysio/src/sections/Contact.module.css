@@ -1,16 +1,40 @@
 .contact {
-  background-color: var(--color-sand);
+  background: linear-gradient(135deg, var(--color-mint) 0%, var(--color-mint-medium) 100%);
+  position: relative;
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: radial-gradient(ellipse at center bottom, rgba(91, 186, 111, 0.1) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .title {
   text-align: center;
+  margin-bottom: 1rem;
+  color: var(--color-deep-forest);
+  font-size: 2.25rem;
+}
+
+.subtitle {
+  text-align: center;
   margin-bottom: 3rem;
-  color: var(--color-deep-blue);
+  color: var(--color-warm-gray);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .content {
@@ -19,9 +43,18 @@
   gap: 3rem;
 }
 
+.info {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 20px;
+  border: 1px solid rgba(91, 186, 111, 0.1);
+}
+
 .info h3 {
-  color: var(--color-deep-blue);
-  margin-bottom: 1rem;
+  color: var(--color-deep-forest);
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .infoItem {
@@ -29,23 +62,28 @@
 }
 
 .infoItem h4 {
-  color: var(--color-forest-green);
+  color: var(--color-turf-green);
   margin-bottom: 0.5rem;
   font-size: 1rem;
+  font-weight: 600;
 }
 
 .infoItem p {
   color: var(--color-warm-gray);
   margin: 0;
   white-space: pre-line;
+  line-height: 1.7;
 }
 
 .infoItem a {
-  color: var(--color-deep-blue);
+  color: var(--color-turf-green);
   text-decoration: none;
+  font-weight: 500;
+  transition: all var(--transition-fast);
 }
 
 .infoItem a:hover {
+  color: var(--color-forest-green);
   text-decoration: underline;
 }
 
@@ -57,6 +95,11 @@
 
 .form {
   animation: slideUp 0.6s ease-out;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 20px;
+  border: 1px solid rgba(91, 186, 111, 0.1);
 }
 
 .formGroup {
@@ -66,30 +109,33 @@
 .formGroup label {
   display: block;
   margin-bottom: 0.5rem;
-  color: var(--color-dark-brown);
-  font-weight: 500;
+  color: var(--color-dark-gray);
+  font-weight: 600;
+  font-size: 0.9375rem;
 }
 
 .formGroup input,
 .formGroup textarea {
   width: 100%;
-  padding: 0.875rem;
-  border: 1px solid var(--color-taupe);
-  border-radius: 4px;
+  padding: 1rem;
+  border: 2px solid rgba(91, 186, 111, 0.2);
+  border-radius: 12px;
   font-family: inherit;
   font-size: 1rem;
-  transition: border-color 0.3s ease;
+  transition: all var(--transition-fast);
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .formGroup input:focus,
 .formGroup textarea:focus {
   outline: none;
-  border-color: var(--color-deep-blue);
+  border-color: var(--color-emerald);
+  box-shadow: 0 0 0 4px rgba(91, 186, 111, 0.15);
 }
 
 .formGroup textarea {
   resize: vertical;
-  min-height: 120px;
+  min-height: 140px;
 }
 
 .ctas {
@@ -100,6 +146,10 @@
 }
 
 @media (max-width: 768px) {
+  .title {
+    font-size: 1.875rem;
+  }
+  
   .content {
     grid-template-columns: 1fr;
     gap: 2rem;

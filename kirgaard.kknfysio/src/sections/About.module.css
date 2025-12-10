@@ -1,12 +1,27 @@
 .about {
-  background-color: var(--color-sand);
+  background: linear-gradient(135deg, var(--color-mint) 0%, var(--color-mint-medium) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 60%;
+  height: 200%;
+  background: radial-gradient(ellipse, rgba(91, 186, 111, 0.1) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  gap: 4rem;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .content {
@@ -14,37 +29,58 @@
 }
 
 .title {
-  color: var(--color-deep-blue);
+  color: var(--color-deep-forest);
   margin-bottom: 1rem;
+  font-size: 2.25rem;
 }
 
 .lead {
-  font-size: 1.25rem;
-  color: var(--color-forest-green);
+  font-size: 1.375rem;
+  color: var(--color-turf-green);
   font-weight: 600;
   margin-bottom: 1.5rem;
+  line-height: 1.4;
 }
 
 .bio {
   color: var(--color-warm-gray);
-  line-height: 1.8;
+  line-height: 1.9;
+  font-size: 1.0625rem;
 }
 
 .imagePlaceholder {
-  background-color: var(--color-taupe);
-  border-radius: 8px;
+  background: linear-gradient(135deg, var(--color-emerald) 0%, var(--color-turf-green) 100%);
+  border-radius: 24px;
   aspect-ratio: 3 / 4;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--color-white);
   animation: slideInRight 0.6s ease-out;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.imagePlaceholder::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  animation: shimmer 3s infinite;
 }
 
 @media (max-width: 768px) {
   .container {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 2.5rem;
+  }
+  
+  .title {
+    font-size: 1.875rem;
   }
 
   .imagePlaceholder {

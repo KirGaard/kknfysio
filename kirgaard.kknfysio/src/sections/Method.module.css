@@ -1,35 +1,58 @@
 .method {
-  background-color: var(--color-white);
+  background: linear-gradient(180deg, var(--color-white) 0%, var(--color-mint-light) 100%);
 }
 
 .title {
   text-align: center;
-  margin-bottom: 3rem;
-  color: var(--color-deep-blue);
+  margin-bottom: 1rem;
+  color: var(--color-deep-forest);
+  font-size: 2.25rem;
+}
+
+.subtitle {
+  text-align: center;
+  margin-bottom: 3.5rem;
+  color: var(--color-warm-gray);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .steps {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  gap: 2.5rem;
   counter-reset: step-counter;
 }
 
 .step {
   position: relative;
-  padding-top: 3rem;
+  padding-top: 5rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 5rem 1.5rem 2rem;
+  transition: all var(--transition-medium);
+  border: 1px solid rgba(91, 186, 111, 0.1);
+}
+
+.step:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .step::before {
   counter-increment: step-counter;
   content: counter(step-counter);
   position: absolute;
-  top: 0;
+  top: 1.5rem;
   left: 50%;
   transform: translateX(-50%);
-  width: 50px;
-  height: 50px;
-  background-color: var(--color-deep-blue);
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--color-emerald) 0%, var(--color-turf-green) 100%);
   color: var(--color-white);
   border-radius: 50%;
   display: flex;
@@ -37,12 +60,14 @@
   justify-content: center;
   font-size: 1.5rem;
   font-weight: 700;
+  box-shadow: 0 4px 12px rgba(19, 117, 71, 0.3);
 }
 
 .stepTitle {
   text-align: center;
   margin-bottom: 1rem;
-  color: var(--color-forest-green);
+  color: var(--color-turf-green);
+  font-size: 1.25rem;
 }
 
 .stepDescription {
@@ -52,6 +77,10 @@
 }
 
 @media (max-width: 768px) {
+  .title {
+    font-size: 1.875rem;
+  }
+  
   .steps {
     grid-template-columns: 1fr;
   }
